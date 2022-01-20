@@ -12,6 +12,7 @@ public class FinishLine : MonoBehaviour
 		if (other.tag == "Player")
 		{
 			finishVFX.Play();
+			GetComponent<AudioSource>().Play();
 			Invoke(nameof(ReloadLevel), loadDelay);
 		}
 	}
