@@ -14,6 +14,7 @@ public class CrashDetector : MonoBehaviour
 	private void OnTriggerEnter2D(Collider2D other) {
 		if (other.tag == "Ground" && !hasCrashed)
 		{
+			FindObjectOfType<PlayerController>().DisableControls();
 			hasCrashed = true;
 			crashVFX.Play();
 			GetComponent<AudioSource>().PlayOneShot(crashSFX);
